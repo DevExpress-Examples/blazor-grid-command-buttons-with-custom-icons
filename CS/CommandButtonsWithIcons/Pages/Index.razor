@@ -14,7 +14,7 @@
                     <a class="oi oi-plus link-decoration" @onclick="@(() => MyGrid.StartEditNewRowAsync())" href="javascript:void(0);"></a>
                 </HeaderTemplate>
                 <CellDisplayTemplate>
-                    <a class="oi oi-pencil link-decoration" @onclick="@(() => MyGrid.StartEditRowAsync(context.VisibleIndex))" href="javascript:void(0);"></a>
+                    <a class="oi oi-pencil link-decoration" @onclick="@(() => MyGrid.StartEditDataItemAsync(context.DataItem))" href="javascript:void(0);"></a>
                     <a class="oi oi-x link-decoration" @onclick="@(() => MyGrid.ShowDataItemDeleteConfirmation(context.DataItem))" href="javascript:void(0);"></a>
                 </CellDisplayTemplate>
             </DxGridCommandColumn>
