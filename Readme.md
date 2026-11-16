@@ -41,7 +41,8 @@ Use the *context* object to obtain the current row object in the column [CellDis
 
 ## Documentation
 
-* [Blazor Grid — Command Column](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxGridCommandColumn)* [Icons in DevExpress Blazor Components](https://docs.devexpress.com/Blazor/401749/styling-and-themes/icons)
+* [Blazor Grid — Command Column](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxGridCommandColumn)
+* [Icons in DevExpress Blazor Components](https://docs.devexpress.com/Blazor/401749/styling-and-themes/icons)
 
 ## More Examples
 
