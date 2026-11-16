@@ -1,0 +1,54 @@
+﻿@inherits DrawerStateLayoutComponentBase
+@inject NavigationManager NavigationManager
+
+<div class="page">
+    <Drawer CssClass="navigation-drawer" PanelWidth="240px">
+        <HeaderTemplate>
+            <div class="navigation-drawer-header">
+                <NavLink href="@AddDrawerStateToUrl("./")">
+                    <img class="logo" src="images/logo.svg" alt="DevExpress logo" />
+                </NavLink>
+                <NavLink aria-label="Close menu" href="@AddDrawerStateToUrlToggled(LocalPath)">
+                    <DxButton aria-label="Close menu" RenderStyle="ButtonRenderStyle.Light" RenderStyleMode="ButtonRenderStyleMode.Text" CssClass="btn-icon-only" IconCssClass="@(ToggledDrawer ? "icon icon-close" : "icon icon-menu")"></DxButton>
+                </NavLink>
+            </div>
+        </HeaderTemplate>
+        <BodyTemplate>
+            <div class="w-100">
+                <NavMenu></NavMenu>
+            </div>
+        </BodyTemplate>
+        <FooterTemplate>
+            <div class="navigation-drawer-footer">
+                <NavLink href="https://docs.devexpress.com/Blazor/400725/blazor-components" class="button-link">
+                    <DxButton Text="Docs" RenderStyle="ButtonRenderStyle.Light" RenderStyleMode="ButtonRenderStyleMode.Text" IconCssClass="icon icon-docs"></DxButton>
+                </NavLink>
+                <NavLink href="https://demos.devexpress.com/blazor/" class="button-link">
+                    <DxButton Text="Demos" RenderStyle="ButtonRenderStyle.Light" RenderStyleMode="ButtonRenderStyleMode.Text" IconCssClass="icon icon-demos"></DxButton>
+                </NavLink>
+            </div>
+        </FooterTemplate>
+        <TargetContent>
+            <div class="drawer-content">
+                <div class="nav-buttons-container">
+                    <NavLink aria-label="Open menu" href="@AddDrawerStateToUrlToggled(LocalPath)" class="menu-button">
+                        <DxButton aria-label="Open menu" RenderStyle="ButtonRenderStyle.Secondary" RenderStyleMode="ButtonRenderStyleMode.Text" CssClass="btn-icon-only" IconCssClass="icon icon-menu"></DxButton>
+                    </NavLink>
+                    @if (RelativePath != String.Empty) {
+                        <NavLink href="@AddDrawerStateToUrl("./")" class="button-link">
+                            <DxButton Text="Back to Home" RenderStyle="ButtonRenderStyle.Secondary" RenderStyleMode="ButtonRenderStyleMode.Text" CssClass="back-button" IconCssClass="icon icon-back"></DxButton>
+                        </NavLink>
+                    }
+                </div>
+                <div class="page-content-container">
+                    @Body
+                </div>
+            </div>
+        </TargetContent>
+    </Drawer>
+</div>
+
+@code {
+    string LocalPath => new Uri(NavigationManager.Uri).LocalPath;
+    string RelativePath => NavigationManager.ToBaseRelativePath(NavigationManager.Uri).Split('?', '#')[0];
+}

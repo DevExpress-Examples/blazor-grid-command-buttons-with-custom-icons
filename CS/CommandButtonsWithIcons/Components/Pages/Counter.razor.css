@@ -1,0 +1,25 @@
+﻿.counter-block {
+    align-items: center;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: 17rem;
+    justify-content: center;
+    padding: 2.5rem 1.5rem 1.5rem;
+    width: 16.875rem;
+    border: 1px solid var(--dxds-color-border);
+}
+
+.counter-block .counter-content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.counter-block .counter-count {
+    font-size: 7.5rem;
+    font-weight: 400;
+    line-height: 7.75rem;
+}
