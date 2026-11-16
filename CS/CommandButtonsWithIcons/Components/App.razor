@@ -1,0 +1,26 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="/" />
+    @DxResourceManager.RegisterTheme(ActiveTheme)
+    @DxResourceManager.RegisterScripts()
+    <link href="@Assets["css/site.css"]" rel="stylesheet" />
+    <link href="@Assets["CommandButtonsWithIcons.styles.css"]" rel="stylesheet" />
+    <ImportMap />
+    <HeadOutlet @rendermode="InteractiveServer" />
+</head>
+<body>
+    <Routes @rendermode="InteractiveServer" />
+    <script src="@Assets["_framework/blazor.web.js"]"></script>
+</body>
+</html>
+
+@code {
+    static readonly ITheme ActiveTheme = Themes.Fluent.Clone(properties => {
+        properties.Mode = ThemeMode.Light;
+    });
+
+}

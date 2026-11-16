@@ -1,0 +1,23 @@
+::deep .menu {
+    --dxbl-menu-bottom-left-border-radius: 0;
+    --dxbl-menu-bottom-right-border-radius: 0;
+    --dxbl-menu-top-left-border-radius: 0;
+    --dxbl-menu-top-right-border-radius: 0;
+    --dxbl-menu-item-padding-x: 1.125rem;
+    --dxbl-menu-item-padding-y: 0.5rem;
+    --dxbl-menu-item-color: var(--dxds-color-content-static-dark);
+    --dxbl-menu-item-image-color: var(--dxds-color-content-static-dark);
+    --dxbl-menu-item-hover-bg: rgb(from var(--dxds-color-bg-static-light) r g b / 0.15);
+    --dxbl-menu-item-hover-color: var(--dxds-color-content-static-dark);
+    --dxbl-menu-item-hover-image-color: var(--dxds-color-content-static-dark);
+
+    background: none;
+}
+
+::deep .menu.display-mobile {
+    margin-bottom: 2rem;
+}
+
+::deep .menu-item-active {
+    background-color: rgb(from var(--dxds-color-bg-static-light) r g b / 0.05);
+}

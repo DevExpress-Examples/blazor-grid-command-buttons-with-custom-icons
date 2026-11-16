@@ -5,7 +5,7 @@
 [![](https://img.shields.io/badge/💬_Leave_Feedback-feecdd?style=flat-square)](#does-this-example-address-your-development-requirementsobjectives)
 <!-- default badges end -->
 
-# Blazor Grid - Use Custom Icons as Command Buttons
+# Blazor Grid — Use Custom Icons as Command Buttons
 
 A [command column](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxGridCommandColumn) displays the following predefined buttons (icons): 
 
@@ -15,7 +15,9 @@ A [command column](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxGridCo
 
 You can use [HeaderTemplate](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxGridCommandColumn.HeaderTemplate), [CellDisplayTemplate](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxGridCommandColumn.CellDisplayTemplate), or [CellEditTemplate](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxGridCommandColumn.CellEditTemplate) to change command button appearance within the DevExpress Blazor Grid.
 
-![Grid with Custom Icons](images/datagrid-command-icons.png)
+This example uses icons from the [DevExpress Icon Library](https://docs.devexpress.com/Blazor/401749/styling-and-themes/icons#devexpress-icon-library-ctp).
+
+![Grid with Custom Icons](images/grid-command-icons.png)
 
 Handle button/icon click events and call [StartEditNewRowAsync](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxGrid.StartEditNewRowAsync), [StartEditDataItemAsync](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxGrid.StartEditDataItemAsync(System.Object)) and [ShowDataItemDeleteConfirmation](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxGrid.ShowDataItemDeleteConfirmation(System.Object)) methods to implement required functionality. Pass the following parameters:
 
@@ -26,8 +28,10 @@ Use the *context* object to obtain the current row object in the column [CellDis
 
 ```Razor
 <CellDisplayTemplate>
-    <a class="oi oi-pencil link-decoration" @onclick="@(() => MyGrid.StartEditRowAsync(context.VisibleIndex))" href="javascript:void(0);"></a>
-    <a class="oi oi-x link-decoration" @onclick="@(() => MyGrid.ShowDataItemDeleteConfirmation(context.DataItem))" href="javascript:void(0);"></a>
+    <div class="cmd-buttons">
+        <DxButton IconUrl="@Icons.EditPen.PaletteNeutral" RenderStyle="ButtonRenderStyle.None"  @onclick="@(() => MyGrid.StartEditDataItemAsync(context.DataItem))" />
+        <DxButton IconUrl="@Icons.Close.PaletteNeutral" RenderStyle="ButtonRenderStyle.None"  @onclick="@(() => MyGrid.ShowDataItemDeleteConfirmation(context.DataItem))" />
+    </div>
 </CellDisplayTemplate>
 ```
 
@@ -37,12 +41,13 @@ Use the *context* object to obtain the current row object in the column [CellDis
 
 ## Documentation
 
-* [Blazor Grid - Command Column](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxGridCommandColumn)
+* [Blazor Grid — Command Column](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxGridCommandColumn)
+* [Icons in DevExpress Blazor Components](https://docs.devexpress.com/Blazor/401749/styling-and-themes/icons)
 
 ## More Examples
 
-* [Grid for Blazor - Create a custom record deletion confirmation dialog](https://github.com/DevExpress-Examples/blazor-grid-show-custom-confirmation-dialog)
-* [Blazor Grid - Use an External Popup as an Edit Form](https://github.com/DevExpress-Examples/blazor-grid-popup-edit-form-customization)
+* [Blazor Grid — Create a custom record deletion confirmation dialog](https://github.com/DevExpress-Examples/blazor-grid-show-custom-confirmation-dialog)
+* [Blazor Grid — Use an External Popup as an Edit Form](https://github.com/DevExpress-Examples/blazor-grid-popup-edit-form-customization)
 
 <!-- feedback -->
 ## Does This Example Address Your Development Requirements/Objectives?
