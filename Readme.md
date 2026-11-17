@@ -37,7 +37,7 @@ Use the *context* object to obtain the current row object in the column [CellDis
 
 ## Files to Review
 
-* [Index.razor](./CS/CommandButtonsWithIcons/Pages/Index.razor)
+* [Index.razor](./CS/CommandButtonsWithIcons/Components/Pages/Index/Index.razor)
 
 ## Documentation
 
